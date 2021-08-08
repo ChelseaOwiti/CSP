@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CsP</string>
+    <string name="login">LOGIN</string>
+    <string name="email">Enter Email Address</string>
+    <string name="password">Enter Password</string>
+    <string name="forgot">Forgot Password</string>
+    <string name="register">Sign Up!</string>
+</resources>
