@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "586289945858",
+    "project_id": "cspp-a50af",
+    "storage_bucket": "cspp-a50af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586289945858:android:83e1d61fc4a37d6c96361b",
+        "android_client_info": {
+          "package_name": "com.example.csp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586289945858-bf0djavdlae944qmlhv7b0ufr6boet9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNzA7LfLcG3KOLHgFl_BVtNZgccpQKpBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586289945858-bf0djavdlae944qmlhv7b0ufr6boet9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
