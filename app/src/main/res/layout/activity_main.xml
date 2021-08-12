@@ -20,7 +20,6 @@
         android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constrainedWidth_percent=".8"
         android:hint="@string/email"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
