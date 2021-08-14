@@ -7,4 +7,5 @@
     <string name="forgot">Forgot Password?</string>
     <string name="register">Sign Up!</string>
     <string name="phone">Enter Phone Number</string>
+    <string name="welcome">Welcome User !</string>
 </resources>

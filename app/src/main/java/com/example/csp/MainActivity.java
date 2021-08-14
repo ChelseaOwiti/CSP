@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextPassword = (EditText)findViewById(R.id.password);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        mAuth = FirebaseAuth.getInstance();
 
 
     }
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     //REDIRECT TO USER LAYOUT
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
                 }else {
                     Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
                 }
