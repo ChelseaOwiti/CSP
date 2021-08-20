@@ -59,7 +59,7 @@ public class RegisterUser extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar2);
 
         if (mAuth.getCurrentUser()!= null){
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
             finish();
 
         }
@@ -103,7 +103,7 @@ public class RegisterUser extends AppCompatActivity {
                     public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(RegisterUser.this, "User Created", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }else {
                             Toast.makeText(RegisterUser.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -113,7 +113,14 @@ public class RegisterUser extends AppCompatActivity {
         });
 
     }
- //MIGHT DELETE
+
+    public void loginPage(View view) {
+//        Intent intent = new Intent(RegisterUser.this, MainActivity.class);
+//        startActivity(intent);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
+    }
+    //MIGHT DELETE
 //    @Override
 //    public void onClick(View v) {
 //        switch (v.getId()){
