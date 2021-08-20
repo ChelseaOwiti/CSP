@@ -9,4 +9,5 @@
     <string name="register">Sign Up!</string>
     <string name="phone">Enter Phone Number</string>
     <string name="welcome">Welcome User !</string>
+    <string name="regtwo">Already a user? Login here!</string>
 </resources>
