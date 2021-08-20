@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">CsP</string>
+    <string name="logo">MOVE-It</string>
     <string name="login">LOGIN</string>
     <string name="fullName">Enter Full Name</string>
     <string name="email">Enter Email Address</string>
