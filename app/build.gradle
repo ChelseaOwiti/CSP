@@ -72,6 +72,8 @@ dependencies {
     implementation "com.google.android.material:material:$version"
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
 
     // Declare the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
