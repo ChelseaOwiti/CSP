@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_user"
+        android:paddingLeft="10dp"
 
         />
 
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/lekton_bold"
         android:paddingTop="8dp"
+        android:paddingLeft="10dp"
         android:text="Profile"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
