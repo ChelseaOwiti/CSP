@@ -16,6 +16,7 @@
         android:label="@string/logo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name="androidx.multidex.MultiDexApplication"
         android:theme="@style/Theme.CsP">
 
         <!--
@@ -30,9 +31,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+<!--        <activity-->
+<!--            android:name=".MapsActivity"-->
+<!--            android:label="@string/title_activity_maps"></activity>-->
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterUser" />
         <activity android:name=".MainActivity">
