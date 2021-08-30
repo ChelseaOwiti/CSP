@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,6 +47,8 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        //initialize fragment
+        Fragment fragment = new MessageFragment();
 
 // when activity is started this fragment is opened immediately
         //also if device is rotated saved instance state wont be null
