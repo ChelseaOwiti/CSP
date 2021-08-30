@@ -46,6 +46,15 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
+// when activity is started this fragment is opened immediately
+        //also if device is rotated saved instance state wont be null
+        if (savedInstanceState == null){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container
+                , new MessageFragment()).commit();
+        navigationView.setCheckedItem(R.id.nav_message);}
+
+
     }
     //to select one item a time on navigation bar
     @Override
@@ -67,6 +76,8 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
                break;
 
        }
+
+       drawer.closeDrawer(GravityCompat.START);
 
         return true;  //item selected
     }
