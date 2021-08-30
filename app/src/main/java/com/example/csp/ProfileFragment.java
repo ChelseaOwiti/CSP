@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,8 +19,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+import kotlin.Unit;
 
 public class ProfileFragment extends Fragment{
 
@@ -48,33 +54,37 @@ public class ProfileFragment extends Fragment{
         super.onStart();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String currentid = user.getUid();
+        String currentid = null;
+        if (user != null) {
+            currentid = user.getUid();
+        }
         DocumentReference reference;
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
-        reference = firestore.collection("customers").document(currentid);
+        reference = firestore.collection("customers").document(Objects.requireNonNull(currentid));
 
         reference.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull @NotNull Task<DocumentSnapshot> task) {
+                .addOnCompleteListener(task -> {
 
-                        if (task.getResult().exists()){
-                            //fname, email, phone
+                    if (Objects.requireNonNull(task.getResult()).exists()){
+                        //fname, email, phone
 
-                            String nameResult = task.getResult().getString("fname");
-                            String phoneResult = task.getResult().getString("phone");
-                            String emailResult = task.getResult().getString("email");
+                        String nameResult = task.getResult().getString("fname");
+                        String phoneResult = task.getResult().getString("phone");
+                        String emailResult = task.getResult().getString("email");
 
-                            Picasso
+                        //to be changed
+                        Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(imageView);
+                        profemail.setText(emailResult);
+                        profname.setText(phoneResult);
+                        profname.setText(nameResult);
 
-                        }else{
-                            //if user doesn't exist they are routed to create a profile
-                            Intent intent = new Intent(getActivity(), RegisterUser.class);
-                            startActivity(intent);
-                        }
-
+                    }else{
+                        //if user doesn't exist they are routed to create a profile
+                        Intent intent = new Intent(getActivity(), RegisterUser.class);
+                        startActivity(intent);
                     }
+
                 });
 
 
@@ -92,4 +102,9 @@ public class ProfileFragment extends Fragment{
         profname = getActivity().findViewById(R.id.nameProfile);
         profphone = getActivity().findViewById(R.id.phoneProfile);
     }
+
+
+
+
+
 }
