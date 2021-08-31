@@ -38,6 +38,8 @@ import java.util.Locale;
 //actually for maps not messaging
 public class MessageFragment extends Fragment implements OnMapReadyCallback {
 
+
+
     private Context mContext;
 
     Location currentLocation;
@@ -57,7 +59,7 @@ public class MessageFragment extends Fragment implements OnMapReadyCallback {
         View view = inflater.inflate(R.layout.fragment_message, container, false);
 
 
-        searchView = searchView.findViewById(R.id.sv_location);
+        searchView = (SearchView) view.findViewById(R.id.sv_location);
 
 
 
@@ -72,7 +74,8 @@ public class MessageFragment extends Fragment implements OnMapReadyCallback {
                 List<Address> addressList = null;
 
                 if(location != null || !location.equals("") ){
-                    Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
+
+                    Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
                     try {
                         addressList = geocoder.getFromLocationName(location, 1);
                     } catch (IOException e) {
