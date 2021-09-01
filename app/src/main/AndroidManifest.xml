@@ -38,7 +38,10 @@
 <!--            android:label="@string/title_activity_maps"></activity>-->
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterUser" />
+        <activity android:name=".DriverLogin"/>
+        <activity android:name=".DriverActivity"/>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

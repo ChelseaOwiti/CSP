@@ -28,9 +28,66 @@ public class DriverActivity extends FragmentActivity implements OnMapReadyCallba
         mapFragment.getMapAsync(this);
     }
 
+
+//        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
+//        @Override
+//        public void onMapReady(@NonNull @NotNull GoogleMap mMap) {
+//            //when map is loaded
+//            mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+//                @Override
+//                public void onMapClick(@NonNull @NotNull LatLng latLng) {
+//                    //when clicked on map, initialize marker
+//
+//                    MarkerOptions markerOptions = new MarkerOptions();
+//                    // set position
+//                    markerOptions.position(latLng);
+//                    //set title of marker
+//                    markerOptions.title(latLng.latitude + ":" + latLng.latitude);
+//                    //remove marker
+//                    mMap.clear();
+//
+//                    // zoom marker
+//                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
+//                            latLng, 10
+//                    ));
+//                    //marker on map
+//                    mMap.addMarker(markerOptions);
+//
+//
+//
+//
+//                }
+//            });
+//
+//        }
+//    });
+
+
     @Override
     public void onMapReady(@NonNull @NotNull GoogleMap googleMap) {
         mMap = googleMap;
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(@NonNull @NotNull LatLng latLng) {
+                //when clicked on map, initialize marker
+
+                MarkerOptions markerOptions = new MarkerOptions();
+                // set position
+                markerOptions.position(latLng);
+                //set title of marker
+                markerOptions.title(latLng.latitude + ":" + latLng.latitude);
+                //remove marker
+                mMap.clear();
+
+                // zoom marker
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                        latLng, 10
+                ));
+                //marker on map
+                mMap.addMarker(markerOptions);
+            }
+        });
 
         LatLng nairobi = new LatLng(1, 36);
         mMap.addMarker(new MarkerOptions().position(nairobi).title("Nairobi"));

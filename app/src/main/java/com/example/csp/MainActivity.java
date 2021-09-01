@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //route to driver side 
+        //route to driver side
         driverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
