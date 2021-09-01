@@ -1,6 +1,7 @@
 package com.example.csp;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -190,9 +191,11 @@ public class MessageFragment extends Fragment implements OnMapReadyCallback {
 //        });
 //
 //    }
-
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(@NonNull @NotNull GoogleMap googleMap) {
+        map = googleMap;
+        map.setMyLocationEnabled(true);
 
     }
 

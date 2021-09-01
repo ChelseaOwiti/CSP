@@ -25,7 +25,7 @@ import org.jetbrains.annotations.NotNull;
 public class MainActivity extends AppCompatActivity {
 
 
-    TextView registerBtn; //route to register page
+    TextView registerBtn, driverBtn; //route to register page
     EditText editTextEmail, editTextPassword; //email and password
     Button login; //login btn
     ProgressBar progressBar;
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.register);
         progressBar = findViewById(R.id.progressBar);
         mAuth = FirebaseAuth.getInstance();
+        driverBtn = findViewById(R.id.driver);
         //registerBtn.setOnClickListener(this);
 
 
@@ -89,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), RegisterUser.class));
+            }
+        });
+
+        //route to driver side 
+        driverBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DriverLogin.class));
             }
         });
 
